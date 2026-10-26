@@ -6,7 +6,7 @@ Many mistakenly see UI/UX design as a simple "pick pretty fonts and colors" acti
 
 In the current era of AI-generated products, the UI is one of the components that cannot be done well without a professional to look it over. Developers often do not pay attention to the usability of their product, which leads to confusing websites and apps with yellow text on orange backgrounds, unreadable content, poor accessibility and no clear navigation. With a bad user-facing design, the product is immediately bad, no matter how good its actual functionality is.
 
-This project aims to help with that problem. It will be useful for designers who are looking for guidance when they start designing applications, as well as for developers who build with AI tools.\
+This project aims to help with that problem. It will be useful for designers who are looking for guidance when they start designing applications, as well as for developers who build with AI tools.
 
 <img width="1769" height="1022" alt="image_1" src="https://github.com/user-attachments/assets/0d3b27b6-ee5b-4fee-adb5-3e97c240169a" />
 
