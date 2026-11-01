@@ -31,3 +31,5 @@ All styles will be available to copy as CSS right away.
 ## Technical requirements
 
 A Python-based website, hosted on GitHub Pages.
+
+Using Pyscript to display project as a web page. HTML and css for UI.
