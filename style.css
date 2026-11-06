@@ -168,30 +168,47 @@ body {
   cursor: default;
 }
 
-/* dashboard grid: everything fits one screen on desktop */
+/* dashboard: text+colors, buttons+info and the icon strip are columns;
+   the 4 UI mockups are their own even 2x2 grid. matches the wireframe. */
 
 .dashboard {
   flex: 1 1 auto;
   min-height: 0;
-  display: grid;
-  grid-template-columns: 1.15fr 1.15fr 0.6fr 1fr 1fr;
-  grid-template-rows: auto 1fr;
-  grid-template-areas:
-    "text    buttons icons ui1 ui2"
-    "colors  info    icons ui3 ui4";
+  display: flex;
   gap: var(--space-md);
   padding: var(--space-md) var(--space-lg);
 }
 
-.panel-text { grid-area: text; }
-.panel-buttons { grid-area: buttons; }
-.panel-info { grid-area: info; }
-.panel-icons { grid-area: icons; }
-.panel-colors { grid-area: colors; }
-.panel-ui1 { grid-area: ui1; }
-.panel-ui2 { grid-area: ui2; }
-.panel-ui3 { grid-area: ui3; }
-.panel-ui4 { grid-area: ui4; }
+.col {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.col-text { flex: 1.7 1 0; }
+.col-buttons { flex: 2 1 0; }
+.panel-icons { flex: 1 1 0; }
+
+.col-text .panel-text,
+.col-buttons .panel-buttons {
+  flex: 0 0 auto;
+}
+
+.col-text .panel-colors,
+.col-buttons .panel-info {
+  flex: 1 1 0;
+  min-height: 0;
+}
+
+.ui-grid {
+  flex: 2.2 1 0;
+  min-width: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: var(--space-md);
+}
 
 .panel {
   min-height: 0;
@@ -593,15 +610,19 @@ body {
   }
 
   .dashboard {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto;
-    grid-template-areas:
-      "text     buttons"
-      "info     icons"
-      "colors   colors"
-      "ui1      ui2"
-      "ui3      ui4";
+    flex-direction: column;
     height: auto;
+  }
+
+  .col-text .panel-colors,
+  .col-buttons .panel-info,
+  .panel-icons {
+    flex: 0 0 auto;
+  }
+
+  .ui-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
   }
 
   .panel {
