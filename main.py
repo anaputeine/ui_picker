@@ -13,6 +13,11 @@ generate_button = document.querySelector("#generate")
 font_link = document.querySelector("#font-link")
 root = document.documentElement
 
+copy_font_button = document.querySelector("#copy-font-css")
+copy_colors_button = document.querySelector("#copy-colors-css")
+copy_icons_button = document.querySelector("#copy-icons-css")
+copy_shape_button = document.querySelector("#copy-shape-css")
+
 current = {}
 
 
@@ -41,6 +46,22 @@ def show_icons(icon_result):
         element.setAttribute("icon", icons.icon_id(icon_result, concept))
 
 
+# lists each icon concept with the icon name picked for it, one per line
+def icons_text(icon_result):
+    lines = []
+    for concept in icons.CONCEPTS:
+        lines.append(concept + ": " + icons.icon_id(icon_result, concept))
+    return "\n".join(lines)
+
+
+# puts the css text on each copy button so script.js can copy it
+def set_copy_buttons(type_result, palette, shape, icon_result):
+    copy_font_button.setAttribute("data-css", typography.to_css(type_result))
+    copy_colors_button.setAttribute("data-css", color.to_css(palette))
+    copy_shape_button.setAttribute("data-css", presets.to_css(shape))
+    copy_icons_button.setAttribute("data-css", icons_text(icon_result))
+
+
 # makes one sentence about what was picked
 def describe(type_result, palette, shape, icon_result):
     font_text = f"Font: {type_result['font']['name']}, scale {type_result['ratio']}, callout as {type_result['callout_type']}. "
@@ -65,6 +86,7 @@ def generate():
 
     show_hex_codes(palette["colors"])
     show_icons(icon_result)
+    set_copy_buttons(type_result, palette, shape, icon_result)
     summary.textContent = describe(type_result, palette, shape, icon_result)
 
     current["typography"] = type_result

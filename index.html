@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ui_picker</title>
+  <title>UI Picker</title>
 
   <link id="font-link" rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap">
@@ -17,67 +17,125 @@
 </head>
 <body>
 
-  <button id="generate" type="button" disabled>Generate</button>
-  <p id="status" role="status">Loading Python…</p>
-  <p id="summary"></p>
+  <header class="site-header">
+    <div class="logo">
+      <span class="logo-mark"></span>
+      <span class="logo-text">UI PICKER</span>
+    </div>
+    <div class="header-actions">
+      <p id="status" role="status">Loading Python…</p>
+      <button id="generate" type="button" disabled>Generate</button>
+    </div>
+  </header>
 
-  <main class="columns">
+  <p id="summary" class="summary"></p>
 
-    <section>
-      <h2>Text</h2>
-      <div class="t-title">Title</div>
-      <div class="t-subtitle">Subtitle</div>
-      <div class="t-description">Description</div>
-      <div class="t-callout">Callout</div>
-      <div class="t-body">Body text</div>
-    </section>
+  <main>
 
-    <section>
-      <h2>Colors</h2>
-      <div class="color-grid">
-        <div class="color" data-role="background"><div class="swatch" style="background: var(--color-background)"></div><span class="color-name">background</span> <code class="hex"></code></div>
-        <div class="color" data-role="surface"><div class="swatch" style="background: var(--color-surface)"></div><span class="color-name">surface</span> <code class="hex"></code></div>
-        <div class="color" data-role="border"><div class="swatch" style="background: var(--color-border)"></div><span class="color-name">border</span> <code class="hex"></code></div>
-        <div class="color" data-role="border-strong"><div class="swatch" style="background: var(--color-border-strong)"></div><span class="color-name">border-strong</span> <code class="hex"></code></div>
-        <div class="color" data-role="text"><div class="swatch" style="background: var(--color-text)"></div><span class="color-name">text</span> <code class="hex"></code></div>
-        <div class="color" data-role="text-muted"><div class="swatch" style="background: var(--color-text-muted)"></div><span class="color-name">text-muted</span> <code class="hex"></code></div>
-        <div class="color" data-role="primary"><div class="swatch" style="background: var(--color-primary)"></div><span class="color-name">primary</span> <code class="hex"></code></div>
-        <div class="color" data-role="primary-hover"><div class="swatch" style="background: var(--color-primary-hover)"></div><span class="color-name">primary-hover</span> <code class="hex"></code></div>
-        <div class="color" data-role="primary-pressed"><div class="swatch" style="background: var(--color-primary-pressed)"></div><span class="color-name">primary-pressed</span> <code class="hex"></code></div>
-        <div class="color" data-role="on-primary"><div class="swatch" style="background: var(--color-on-primary)"></div><span class="color-name">on-primary</span> <code class="hex"></code></div>
-        <div class="color" data-role="secondary"><div class="swatch" style="background: var(--color-secondary)"></div><span class="color-name">secondary</span> <code class="hex"></code></div>
-        <div class="color" data-role="secondary-hover"><div class="swatch" style="background: var(--color-secondary-hover)"></div><span class="color-name">secondary-hover</span> <code class="hex"></code></div>
-        <div class="color" data-role="secondary-pressed"><div class="swatch" style="background: var(--color-secondary-pressed)"></div><span class="color-name">secondary-pressed</span> <code class="hex"></code></div>
-        <div class="color" data-role="on-secondary"><div class="swatch" style="background: var(--color-on-secondary)"></div><span class="color-name">on-secondary</span> <code class="hex"></code></div>
-        <div class="color" data-role="disabled"><div class="swatch" style="background: var(--color-disabled)"></div><span class="color-name">disabled</span> <code class="hex"></code></div>
-        <div class="color" data-role="on-disabled"><div class="swatch" style="background: var(--color-on-disabled)"></div><span class="color-name">on-disabled</span> <code class="hex"></code></div>
-        <div class="color" data-role="accent"><div class="swatch" style="background: var(--color-accent)"></div><span class="color-name">accent</span> <code class="hex"></code></div>
-        <div class="color" data-role="icon"><div class="swatch" style="background: var(--color-icon)"></div><span class="color-name">icon</span> <code class="hex"></code></div>
-        <div class="color" data-role="focus"><div class="swatch" style="background: var(--color-focus)"></div><span class="color-name">focus</span> <code class="hex"></code></div>
-        <div class="color" data-role="error"><div class="swatch" style="background: var(--color-error)"></div><span class="color-name">error</span> <code class="hex"></code></div>
-        <div class="color" data-role="warning"><div class="swatch" style="background: var(--color-warning)"></div><span class="color-name">warning</span> <code class="hex"></code></div>
-        <div class="color" data-role="success"><div class="swatch" style="background: var(--color-success)"></div><span class="color-name">success</span> <code class="hex"></code></div>
+    <!-- text styles -->
+    <section class="section">
+      <div class="section-head">
+        <h2>Text</h2>
+        <button class="copy-button" id="copy-font-css">COPY CSS</button>
+      </div>
+      <div class="text-sample">
+        <p class="t-title">Main heading</p>
+        <p class="t-subtitle">Subheading</p>
+        <p class="t-description">Description text explains the page in a sentence or two.</p>
+        <p class="t-callout">Highlight callout</p>
+        <p class="t-body">Body text is for longer reading, like this paragraph right here.</p>
       </div>
     </section>
 
-    <section>
-      <h2>Icons</h2>
-      <div class="icon-sample"><iconify-icon icon="lucide:house" data-concept="home" aria-hidden="true"></iconify-icon><span class="icon-name">home</span></div>
-      <div class="icon-sample"><iconify-icon icon="lucide:search" data-concept="search" aria-hidden="true"></iconify-icon><span class="icon-name">search</span></div>
-      <div class="icon-sample"><iconify-icon icon="lucide:bell" data-concept="bell" aria-hidden="true"></iconify-icon><span class="icon-name">bell</span></div>
-      <div class="icon-sample"><iconify-icon icon="lucide:user" data-concept="user" aria-hidden="true"></iconify-icon><span class="icon-name">user</span></div>
-      <div class="icon-sample"><iconify-icon icon="lucide:heart" data-concept="heart" aria-hidden="true"></iconify-icon><span class="icon-name">heart</span></div>
-      <div class="icon-sample"><iconify-icon icon="lucide:star" data-concept="star" aria-hidden="true"></iconify-icon><span class="icon-name">star</span></div>
-      <div class="icon-sample"><iconify-icon icon="lucide:settings" data-concept="settings" aria-hidden="true"></iconify-icon><span class="icon-name">settings</span></div>
-      <div class="icon-sample"><iconify-icon icon="lucide:plus" data-concept="plus" aria-hidden="true"></iconify-icon><span class="icon-name">plus</span></div>
-      <div class="icon-sample"><iconify-icon icon="lucide:pencil" data-concept="edit" aria-hidden="true"></iconify-icon><span class="icon-name">edit</span></div>
-      <div class="icon-sample"><iconify-icon icon="lucide:trash-2" data-concept="trash" aria-hidden="true"></iconify-icon><span class="icon-name">trash</span></div>
-      <div class="icon-sample"><iconify-icon icon="lucide:share-2" data-concept="share" aria-hidden="true"></iconify-icon><span class="icon-name">share</span></div>
-      <div class="icon-sample"><iconify-icon icon="lucide:download" data-concept="download" aria-hidden="true"></iconify-icon><span class="icon-name">download</span></div>
-      <div class="icon-sample"><iconify-icon icon="lucide:circle-check" data-concept="check" aria-hidden="true"></iconify-icon><span class="icon-name">check</span></div>
-      <div class="icon-sample"><iconify-icon icon="lucide:circle-alert" data-concept="warning" aria-hidden="true"></iconify-icon><span class="icon-name">warning</span></div>
-      <div class="icon-sample"><iconify-icon icon="lucide:info" data-concept="info" aria-hidden="true"></iconify-icon><span class="icon-name">info</span></div>
-      <div class="icon-sample"><iconify-icon icon="lucide:x" data-concept="close" aria-hidden="true"></iconify-icon><span class="icon-name">close</span></div>
+    <!-- color palette -->
+    <section class="section">
+      <div class="section-head">
+        <h2>Colors</h2>
+        <button class="copy-button" id="copy-colors-css">COPY CSS</button>
+      </div>
+      <div class="color-grid">
+        <div class="color" data-role="background"><div class="swatch" style="background: var(--color-background)"></div><span class="color-name">background</span><code class="hex"></code></div>
+        <div class="color" data-role="surface"><div class="swatch" style="background: var(--color-surface)"></div><span class="color-name">surface</span><code class="hex"></code></div>
+        <div class="color" data-role="border"><div class="swatch" style="background: var(--color-border)"></div><span class="color-name">border</span><code class="hex"></code></div>
+        <div class="color" data-role="border-strong"><div class="swatch" style="background: var(--color-border-strong)"></div><span class="color-name">border-strong</span><code class="hex"></code></div>
+        <div class="color" data-role="text"><div class="swatch" style="background: var(--color-text)"></div><span class="color-name">text</span><code class="hex"></code></div>
+        <div class="color" data-role="text-muted"><div class="swatch" style="background: var(--color-text-muted)"></div><span class="color-name">text-muted</span><code class="hex"></code></div>
+        <div class="color" data-role="primary"><div class="swatch" style="background: var(--color-primary)"></div><span class="color-name">primary</span><code class="hex"></code></div>
+        <div class="color" data-role="primary-hover"><div class="swatch" style="background: var(--color-primary-hover)"></div><span class="color-name">primary-hover</span><code class="hex"></code></div>
+        <div class="color" data-role="primary-pressed"><div class="swatch" style="background: var(--color-primary-pressed)"></div><span class="color-name">primary-pressed</span><code class="hex"></code></div>
+        <div class="color" data-role="on-primary"><div class="swatch" style="background: var(--color-on-primary)"></div><span class="color-name">on-primary</span><code class="hex"></code></div>
+        <div class="color" data-role="secondary"><div class="swatch" style="background: var(--color-secondary)"></div><span class="color-name">secondary</span><code class="hex"></code></div>
+        <div class="color" data-role="secondary-hover"><div class="swatch" style="background: var(--color-secondary-hover)"></div><span class="color-name">secondary-hover</span><code class="hex"></code></div>
+        <div class="color" data-role="secondary-pressed"><div class="swatch" style="background: var(--color-secondary-pressed)"></div><span class="color-name">secondary-pressed</span><code class="hex"></code></div>
+        <div class="color" data-role="on-secondary"><div class="swatch" style="background: var(--color-on-secondary)"></div><span class="color-name">on-secondary</span><code class="hex"></code></div>
+        <div class="color" data-role="disabled"><div class="swatch" style="background: var(--color-disabled)"></div><span class="color-name">disabled</span><code class="hex"></code></div>
+        <div class="color" data-role="on-disabled"><div class="swatch" style="background: var(--color-on-disabled)"></div><span class="color-name">on-disabled</span><code class="hex"></code></div>
+        <div class="color" data-role="accent"><div class="swatch" style="background: var(--color-accent)"></div><span class="color-name">accent</span><code class="hex"></code></div>
+        <div class="color" data-role="icon"><div class="swatch" style="background: var(--color-icon)"></div><span class="color-name">icon</span><code class="hex"></code></div>
+        <div class="color" data-role="focus"><div class="swatch" style="background: var(--color-focus)"></div><span class="color-name">focus</span><code class="hex"></code></div>
+        <div class="color" data-role="error"><div class="swatch" style="background: var(--color-error)"></div><span class="color-name">error</span><code class="hex"></code></div>
+        <div class="color" data-role="warning"><div class="swatch" style="background: var(--color-warning)"></div><span class="color-name">warning</span><code class="hex"></code></div>
+        <div class="color" data-role="success"><div class="swatch" style="background: var(--color-success)"></div><span class="color-name">success</span><code class="hex"></code></div>
+      </div>
+    </section>
+
+    <!-- icon set -->
+    <section class="section">
+      <div class="section-head">
+        <h2>Icons</h2>
+        <button class="copy-button" id="copy-icons-css">COPY NAMES</button>
+      </div>
+      <div class="icon-grid">
+        <div class="icon-sample"><iconify-icon icon="lucide:house" data-concept="home" aria-hidden="true"></iconify-icon><span class="icon-name">home</span></div>
+        <div class="icon-sample"><iconify-icon icon="lucide:search" data-concept="search" aria-hidden="true"></iconify-icon><span class="icon-name">search</span></div>
+        <div class="icon-sample"><iconify-icon icon="lucide:bell" data-concept="bell" aria-hidden="true"></iconify-icon><span class="icon-name">bell</span></div>
+        <div class="icon-sample"><iconify-icon icon="lucide:user" data-concept="user" aria-hidden="true"></iconify-icon><span class="icon-name">user</span></div>
+        <div class="icon-sample"><iconify-icon icon="lucide:heart" data-concept="heart" aria-hidden="true"></iconify-icon><span class="icon-name">heart</span></div>
+        <div class="icon-sample"><iconify-icon icon="lucide:star" data-concept="star" aria-hidden="true"></iconify-icon><span class="icon-name">star</span></div>
+        <div class="icon-sample"><iconify-icon icon="lucide:settings" data-concept="settings" aria-hidden="true"></iconify-icon><span class="icon-name">settings</span></div>
+        <div class="icon-sample"><iconify-icon icon="lucide:plus" data-concept="plus" aria-hidden="true"></iconify-icon><span class="icon-name">plus</span></div>
+        <div class="icon-sample"><iconify-icon icon="lucide:pencil" data-concept="edit" aria-hidden="true"></iconify-icon><span class="icon-name">edit</span></div>
+        <div class="icon-sample"><iconify-icon icon="lucide:trash-2" data-concept="trash" aria-hidden="true"></iconify-icon><span class="icon-name">trash</span></div>
+        <div class="icon-sample"><iconify-icon icon="lucide:share-2" data-concept="share" aria-hidden="true"></iconify-icon><span class="icon-name">share</span></div>
+        <div class="icon-sample"><iconify-icon icon="lucide:download" data-concept="download" aria-hidden="true"></iconify-icon><span class="icon-name">download</span></div>
+        <div class="icon-sample"><iconify-icon icon="lucide:circle-check" data-concept="check" aria-hidden="true"></iconify-icon><span class="icon-name">check</span></div>
+        <div class="icon-sample"><iconify-icon icon="lucide:circle-alert" data-concept="warning" aria-hidden="true"></iconify-icon><span class="icon-name">warning</span></div>
+        <div class="icon-sample"><iconify-icon icon="lucide:info" data-concept="info" aria-hidden="true"></iconify-icon><span class="icon-name">info</span></div>
+        <div class="icon-sample"><iconify-icon icon="lucide:x" data-concept="close" aria-hidden="true"></iconify-icon><span class="icon-name">close</span></div>
+      </div>
+    </section>
+
+    <!-- buttons, built from the shape and color variables -->
+    <section class="section">
+      <div class="section-head">
+        <h2>Buttons</h2>
+        <button class="copy-button" id="copy-shape-css">COPY CSS</button>
+      </div>
+      <div class="button-row">
+        <button class="demo-button demo-button-primary">Primary</button>
+        <button class="demo-button demo-button-secondary">Secondary</button>
+        <button class="demo-button demo-button-primary" disabled>Disabled</button>
+      </div>
+    </section>
+
+    <!-- a small page built from everything above, to see it all together -->
+    <section class="section">
+      <h2>Page example</h2>
+      <div class="example-card">
+        <div class="example-top">
+          <iconify-icon icon="lucide:house" data-concept="home" aria-hidden="true"></iconify-icon>
+          <span class="t-callout">Dashboard</span>
+        </div>
+        <p class="t-title">Welcome back</p>
+        <p class="t-body">Here is a small example page, styled only with the generated text, color and shape variables above.</p>
+        <div class="example-actions">
+          <button class="demo-button demo-button-primary">
+            <iconify-icon icon="lucide:plus" data-concept="plus" aria-hidden="true"></iconify-icon>
+            Continue
+          </button>
+          <button class="demo-button demo-button-secondary">Cancel</button>
+        </div>
+      </div>
     </section>
 
   </main>
@@ -86,6 +144,7 @@
     <p>Icons via Iconify. Solar icons by 480 Design, CC BY 4.0.</p>
   </footer>
 
+  <script src="./script.js"></script>
   <script type="mpy" src="./main.py" config="./pyscript.toml"></script>
 </body>
 </html>
