@@ -600,10 +600,16 @@ body {
 .mini-card {
   flex: 1 1 auto;
   min-width: 0;
+  max-width: 100%;
   padding: var(--space-sm);
   background-color: var(--color-surface);
   border: var(--border-width) solid var(--color-border);
   border-radius: var(--radius-small);
+  overflow: hidden;
+}
+
+.mini-card > * {
+  overflow-wrap: break-word;
 }
 
 .mini-card > * {
