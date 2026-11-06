@@ -4,9 +4,6 @@ var copyButtons = document.querySelectorAll(".copy-button");
 copyButtons.forEach(function (button) {
   button.addEventListener("click", function () {
     var cssText = button.getAttribute("data-css");
-    if (!cssText) {
-      return;
-    }
     navigator.clipboard.writeText(cssText);
 
     var originalLabel = button.textContent;
