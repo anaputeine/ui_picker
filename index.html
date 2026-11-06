@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UI Picker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="logo">
+      <span class="logo-mark"></span>
+      <span class="logo-text">UI PICKER</span>
+    </div>
+    <nav>
+      <a href="#" class="nav-link">Home</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- icon set example -->
+    <section class="section">
+      <h2>Styled icon sets</h2>
+      <div class="icon-row">
+        <div class="icon icon-star"></div>
+        <div class="icon icon-person">
+          <div class="icon-person-head"></div>
+          <div class="icon-person-body"></div>
+        </div>
+        <div class="icon icon-quote">&ldquo;</div>
+        <div class="icon icon-phone">
+          <div class="icon-phone-button"></div>
+        </div>
+        <div class="icon icon-home">
+          <div class="icon-home-roof"></div>
+          <div class="icon-home-body"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- text styles over a background, this is the main demo card -->
+    <section class="section">
+      <h2>Text styles for different purposes paired with background</h2>
+      <div class="demo-card" id="demo-card">
+        <div class="demo-cloud"></div>
+        <div class="demo-hill-back"></div>
+        <div class="demo-hill-front"></div>
+        <div class="demo-text">
+          <p class="demo-heading">Main heading</p>
+          <p class="demo-subheading">Subheading</p>
+          <p class="demo-description">Description</p>
+          <p class="demo-highlight">Highlight callout</p>
+          <p class="demo-body">Body</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- button states -->
+    <section class="section">
+      <h2>Styled buttons in various states</h2>
+      <div class="button-row">
+        <button class="demo-button demo-button-idle">BUTTON</button>
+        <button class="demo-button demo-button-pressed">BUTTON</button>
+      </div>
+    </section>
+
+    <!-- fonts list with the copy css buttons -->
+    <section class="section">
+      <h2>Fonts</h2>
+      <p class="section-hint">Suggested fonts with their custom settings in text and css</p>
+      <div class="font-card">
+        <div class="font-row">
+          <span class="font-name">Poppins</span>
+          <span class="font-info">Font information: size 32px, weight 700, spacing 0px.</span>
+          <button class="copy-button"
+            data-css="font-family: 'Poppins', sans-serif;&#10;font-size: 32px;&#10;font-weight: 700;&#10;letter-spacing: 0px;">
+            COPY CSS
+          </button>
+        </div>
+        <div class="font-row">
+          <span class="font-name">Inter</span>
+          <span class="font-info">Font information: size 16px, weight 400, spacing 0.2px.</span>
+          <button class="copy-button"
+            data-css="font-family: 'Inter', sans-serif;&#10;font-size: 16px;&#10;font-weight: 400;&#10;letter-spacing: 0.2px;">
+            COPY CSS
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- color palette -->
+    <section class="section">
+      <h2>Colors</h2>
+      <p class="section-hint">Color palette with hex codes</p>
+      <div class="color-row">
+        <div class="color-card">
+          <div class="color-swatch" style="background-color:#2e6f5e;"></div>
+          <span class="color-name">Color 1</span>
+          <span class="color-hex">hex #2E6F5E</span>
+        </div>
+        <div class="color-card">
+          <div class="color-swatch" style="background-color:#8fc6e8;"></div>
+          <span class="color-name">Color 2</span>
+          <span class="color-hex">hex #8FC6E8</span>
+        </div>
+        <div class="color-card">
+          <div class="color-swatch" style="background-color:#f6c343;"></div>
+          <span class="color-name">Color 3</span>
+          <span class="color-hex">hex #F6C343</span>
+        </div>
+        <div class="color-card">
+          <div class="color-swatch" style="background-color:#1c1b19;"></div>
+          <span class="color-name">Color 4</span>
+          <span class="color-hex">hex #1C1B19</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- interactive preview inside a phone frame -->
+    <section class="section">
+      <h2>UI</h2>
+      <p class="section-hint">Interactive UI segment to try out picked styles</p>
+      <div class="phone-frame">
+        <div class="phone-screen">
+          <div class="demo-card demo-card-small">
+            <div class="demo-cloud"></div>
+            <div class="demo-hill-back"></div>
+            <div class="demo-hill-front"></div>
+            <div class="demo-text">
+              <p class="demo-heading">Main heading</p>
+              <p class="demo-subheading">Subheading</p>
+              <p class="demo-description">Description</p>
+              <p class="demo-highlight">Highlight callout</p>
+              <p class="demo-body">Body</p>
+            </div>
+          </div>
+          <button class="demo-button demo-button-pressed phone-button">BUTTON</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
