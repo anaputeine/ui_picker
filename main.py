@@ -18,6 +18,9 @@ copy_colors_button = document.querySelector("#copy-colors-css")
 copy_icons_button = document.querySelector("#copy-icons-css")
 copy_shape_button = document.querySelector("#copy-shape-css")
 
+font_info = document.querySelector("#font-info")
+icon_info = document.querySelector("#icon-info")
+
 current = {}
 
 
@@ -88,6 +91,9 @@ def generate():
     show_icons(icon_result)
     set_copy_buttons(type_result, palette, shape, icon_result)
     summary.textContent = describe(type_result, palette, shape, icon_result)
+
+    font_info.textContent = f"{type_result['font']['name']}, scale {type_result['ratio']}, callout as {type_result['callout_type']}"
+    icon_info.textContent = f"{icon_result['set']['name']}, {icon_result['style']}"
 
     current["typography"] = type_result
     current["palette"] = palette
