@@ -3,146 +3,89 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>UI Picker</title>
-  <link rel="stylesheet" href="style.css">
+  <title>ui_picker</title>
+
+  <link id="font-link" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap">
+
+  <script src="https://cdn.jsdelivr.net/npm/iconify-icon@2.3.0/dist/iconify-icon.min.js"></script>
+
+  <link rel="stylesheet" href="https://pyscript.net/releases/2026.7.3/core.css">
+  <script type="module" src="https://pyscript.net/releases/2026.7.3/core.js"></script>
+
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
 
-  <header class="site-header">
-    <div class="logo">
-      <span class="logo-mark"></span>
-      <span class="logo-text">UI PICKER</span>
-    </div>
-    <nav>
-      <a href="#" class="nav-link">Home</a>
-    </nav>
-  </header>
+  <button id="generate" type="button" disabled>Generate</button>
+  <p id="status" role="status">Loading Python…</p>
+  <p id="summary"></p>
 
-  <main>
+  <main class="columns">
 
-    <!-- icon set example -->
-    <section class="section">
-      <h2>Styled icon sets</h2>
-      <div class="icon-row">
-        <div class="icon icon-star"></div>
-        <div class="icon icon-person">
-          <div class="icon-person-head"></div>
-          <div class="icon-person-body"></div>
-        </div>
-        <div class="icon icon-quote">&ldquo;</div>
-        <div class="icon icon-phone">
-          <div class="icon-phone-button"></div>
-        </div>
-        <div class="icon icon-home">
-          <div class="icon-home-roof"></div>
-          <div class="icon-home-body"></div>
-        </div>
-      </div>
+    <section>
+      <h2>Text</h2>
+      <div class="t-title">Title</div>
+      <div class="t-subtitle">Subtitle</div>
+      <div class="t-description">Description</div>
+      <div class="t-callout">Callout</div>
+      <div class="t-body">Body text</div>
     </section>
 
-    <!-- text styles over a background, this is the main demo card -->
-    <section class="section">
-      <h2>Text styles for different purposes paired with background</h2>
-      <div class="demo-card" id="demo-card">
-        <div class="demo-cloud"></div>
-        <div class="demo-hill-back"></div>
-        <div class="demo-hill-front"></div>
-        <div class="demo-text">
-          <p class="demo-heading">Main heading</p>
-          <p class="demo-subheading">Subheading</p>
-          <p class="demo-description">Description</p>
-          <p class="demo-highlight">Highlight callout</p>
-          <p class="demo-body">Body</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- button states -->
-    <section class="section">
-      <h2>Styled buttons in various states</h2>
-      <div class="button-row">
-        <button class="demo-button demo-button-idle">BUTTON</button>
-        <button class="demo-button demo-button-pressed">BUTTON</button>
-      </div>
-    </section>
-
-    <!-- fonts list with the copy css buttons -->
-    <section class="section">
-      <h2>Fonts</h2>
-      <p class="section-hint">Suggested fonts with their custom settings in text and css</p>
-      <div class="font-card">
-        <div class="font-row">
-          <span class="font-name">Poppins</span>
-          <span class="font-info">Font information: size 32px, weight 700, spacing 0px.</span>
-          <button class="copy-button"
-            data-css="font-family: 'Poppins', sans-serif;&#10;font-size: 32px;&#10;font-weight: 700;&#10;letter-spacing: 0px;">
-            COPY CSS
-          </button>
-        </div>
-        <div class="font-row">
-          <span class="font-name">Inter</span>
-          <span class="font-info">Font information: size 16px, weight 400, spacing 0.2px.</span>
-          <button class="copy-button"
-            data-css="font-family: 'Inter', sans-serif;&#10;font-size: 16px;&#10;font-weight: 400;&#10;letter-spacing: 0.2px;">
-            COPY CSS
-          </button>
-        </div>
-      </div>
-    </section>
-
-    <!-- color palette -->
-    <section class="section">
+    <section>
       <h2>Colors</h2>
-      <p class="section-hint">Color palette with hex codes</p>
-      <div class="color-row">
-        <div class="color-card">
-          <div class="color-swatch" style="background-color:#2e6f5e;"></div>
-          <span class="color-name">Color 1</span>
-          <span class="color-hex">hex #2E6F5E</span>
-        </div>
-        <div class="color-card">
-          <div class="color-swatch" style="background-color:#8fc6e8;"></div>
-          <span class="color-name">Color 2</span>
-          <span class="color-hex">hex #8FC6E8</span>
-        </div>
-        <div class="color-card">
-          <div class="color-swatch" style="background-color:#f6c343;"></div>
-          <span class="color-name">Color 3</span>
-          <span class="color-hex">hex #F6C343</span>
-        </div>
-        <div class="color-card">
-          <div class="color-swatch" style="background-color:#1c1b19;"></div>
-          <span class="color-name">Color 4</span>
-          <span class="color-hex">hex #1C1B19</span>
-        </div>
+      <div class="color-grid">
+        <div class="color" data-role="background"><div class="swatch" style="background: var(--color-background)"></div><span class="color-name">background</span> <code class="hex"></code></div>
+        <div class="color" data-role="surface"><div class="swatch" style="background: var(--color-surface)"></div><span class="color-name">surface</span> <code class="hex"></code></div>
+        <div class="color" data-role="border"><div class="swatch" style="background: var(--color-border)"></div><span class="color-name">border</span> <code class="hex"></code></div>
+        <div class="color" data-role="border-strong"><div class="swatch" style="background: var(--color-border-strong)"></div><span class="color-name">border-strong</span> <code class="hex"></code></div>
+        <div class="color" data-role="text"><div class="swatch" style="background: var(--color-text)"></div><span class="color-name">text</span> <code class="hex"></code></div>
+        <div class="color" data-role="text-muted"><div class="swatch" style="background: var(--color-text-muted)"></div><span class="color-name">text-muted</span> <code class="hex"></code></div>
+        <div class="color" data-role="primary"><div class="swatch" style="background: var(--color-primary)"></div><span class="color-name">primary</span> <code class="hex"></code></div>
+        <div class="color" data-role="primary-hover"><div class="swatch" style="background: var(--color-primary-hover)"></div><span class="color-name">primary-hover</span> <code class="hex"></code></div>
+        <div class="color" data-role="primary-pressed"><div class="swatch" style="background: var(--color-primary-pressed)"></div><span class="color-name">primary-pressed</span> <code class="hex"></code></div>
+        <div class="color" data-role="on-primary"><div class="swatch" style="background: var(--color-on-primary)"></div><span class="color-name">on-primary</span> <code class="hex"></code></div>
+        <div class="color" data-role="secondary"><div class="swatch" style="background: var(--color-secondary)"></div><span class="color-name">secondary</span> <code class="hex"></code></div>
+        <div class="color" data-role="secondary-hover"><div class="swatch" style="background: var(--color-secondary-hover)"></div><span class="color-name">secondary-hover</span> <code class="hex"></code></div>
+        <div class="color" data-role="secondary-pressed"><div class="swatch" style="background: var(--color-secondary-pressed)"></div><span class="color-name">secondary-pressed</span> <code class="hex"></code></div>
+        <div class="color" data-role="on-secondary"><div class="swatch" style="background: var(--color-on-secondary)"></div><span class="color-name">on-secondary</span> <code class="hex"></code></div>
+        <div class="color" data-role="disabled"><div class="swatch" style="background: var(--color-disabled)"></div><span class="color-name">disabled</span> <code class="hex"></code></div>
+        <div class="color" data-role="on-disabled"><div class="swatch" style="background: var(--color-on-disabled)"></div><span class="color-name">on-disabled</span> <code class="hex"></code></div>
+        <div class="color" data-role="accent"><div class="swatch" style="background: var(--color-accent)"></div><span class="color-name">accent</span> <code class="hex"></code></div>
+        <div class="color" data-role="icon"><div class="swatch" style="background: var(--color-icon)"></div><span class="color-name">icon</span> <code class="hex"></code></div>
+        <div class="color" data-role="focus"><div class="swatch" style="background: var(--color-focus)"></div><span class="color-name">focus</span> <code class="hex"></code></div>
+        <div class="color" data-role="error"><div class="swatch" style="background: var(--color-error)"></div><span class="color-name">error</span> <code class="hex"></code></div>
+        <div class="color" data-role="warning"><div class="swatch" style="background: var(--color-warning)"></div><span class="color-name">warning</span> <code class="hex"></code></div>
+        <div class="color" data-role="success"><div class="swatch" style="background: var(--color-success)"></div><span class="color-name">success</span> <code class="hex"></code></div>
       </div>
     </section>
 
-    <!-- interactive preview inside a phone frame -->
-    <section class="section">
-      <h2>UI</h2>
-      <p class="section-hint">Interactive UI segment to try out picked styles</p>
-      <div class="phone-frame">
-        <div class="phone-screen">
-          <div class="demo-card demo-card-small">
-            <div class="demo-cloud"></div>
-            <div class="demo-hill-back"></div>
-            <div class="demo-hill-front"></div>
-            <div class="demo-text">
-              <p class="demo-heading">Main heading</p>
-              <p class="demo-subheading">Subheading</p>
-              <p class="demo-description">Description</p>
-              <p class="demo-highlight">Highlight callout</p>
-              <p class="demo-body">Body</p>
-            </div>
-          </div>
-          <button class="demo-button demo-button-pressed phone-button">BUTTON</button>
-        </div>
-      </div>
+    <section>
+      <h2>Icons</h2>
+      <div class="icon-sample"><iconify-icon icon="lucide:house" data-concept="home" aria-hidden="true"></iconify-icon><span class="icon-name">home</span></div>
+      <div class="icon-sample"><iconify-icon icon="lucide:search" data-concept="search" aria-hidden="true"></iconify-icon><span class="icon-name">search</span></div>
+      <div class="icon-sample"><iconify-icon icon="lucide:bell" data-concept="bell" aria-hidden="true"></iconify-icon><span class="icon-name">bell</span></div>
+      <div class="icon-sample"><iconify-icon icon="lucide:user" data-concept="user" aria-hidden="true"></iconify-icon><span class="icon-name">user</span></div>
+      <div class="icon-sample"><iconify-icon icon="lucide:heart" data-concept="heart" aria-hidden="true"></iconify-icon><span class="icon-name">heart</span></div>
+      <div class="icon-sample"><iconify-icon icon="lucide:star" data-concept="star" aria-hidden="true"></iconify-icon><span class="icon-name">star</span></div>
+      <div class="icon-sample"><iconify-icon icon="lucide:settings" data-concept="settings" aria-hidden="true"></iconify-icon><span class="icon-name">settings</span></div>
+      <div class="icon-sample"><iconify-icon icon="lucide:plus" data-concept="plus" aria-hidden="true"></iconify-icon><span class="icon-name">plus</span></div>
+      <div class="icon-sample"><iconify-icon icon="lucide:pencil" data-concept="edit" aria-hidden="true"></iconify-icon><span class="icon-name">edit</span></div>
+      <div class="icon-sample"><iconify-icon icon="lucide:trash-2" data-concept="trash" aria-hidden="true"></iconify-icon><span class="icon-name">trash</span></div>
+      <div class="icon-sample"><iconify-icon icon="lucide:share-2" data-concept="share" aria-hidden="true"></iconify-icon><span class="icon-name">share</span></div>
+      <div class="icon-sample"><iconify-icon icon="lucide:download" data-concept="download" aria-hidden="true"></iconify-icon><span class="icon-name">download</span></div>
+      <div class="icon-sample"><iconify-icon icon="lucide:circle-check" data-concept="check" aria-hidden="true"></iconify-icon><span class="icon-name">check</span></div>
+      <div class="icon-sample"><iconify-icon icon="lucide:circle-alert" data-concept="warning" aria-hidden="true"></iconify-icon><span class="icon-name">warning</span></div>
+      <div class="icon-sample"><iconify-icon icon="lucide:info" data-concept="info" aria-hidden="true"></iconify-icon><span class="icon-name">info</span></div>
+      <div class="icon-sample"><iconify-icon icon="lucide:x" data-concept="close" aria-hidden="true"></iconify-icon><span class="icon-name">close</span></div>
     </section>
 
   </main>
 
-  <script src="script.js"></script>
+  <footer>
+    <p>Icons via Iconify. Solar icons by 480 Design, CC BY 4.0.</p>
+  </footer>
+
+  <script type="mpy" src="./main.py" config="./pyscript.toml"></script>
 </body>
 </html>

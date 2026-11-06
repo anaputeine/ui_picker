@@ -1,0 +1,7 @@
+# tells pyscript which python files to load so main.py can import them
+
+[files]
+"./typography.py" = ""
+"./color.py" = ""
+"./presets.py" = ""
+"./icons.py" = ""
