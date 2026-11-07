@@ -336,7 +336,6 @@ body {
   display: flex;
   flex-wrap: nowrap;
   gap: var(--space-sm);
-  overflow: auto;
 }
 
 .demo-button {
