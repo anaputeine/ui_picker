@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="https://pyscript.net/releases/2026.7.3/core.css">
   <script type="module" src="https://pyscript.net/releases/2026.7.3/core.js"></script>
 
-  <link rel="stylesheet" href="./style.css?v=5">
+  <link rel="stylesheet" href="./style.css?v=6">
 </head>
 <body>
 
@@ -28,8 +28,10 @@
 
   <div class="dashboard">
 
-    <!-- left column: text styles on top, colors filling the rest -->
-    <div class="col col-text">
+    <!-- left column: text and buttons side by side on top, colors filling the rest -->
+    <div class="col col-left">
+
+    <div class="top-row">
 
     <!-- text styles -->
     <section class="panel panel-text">
@@ -45,6 +47,38 @@
         <p class="t-body">Body text for longer reading.</p>
       </div>
     </section>
+
+    <!-- buttons on top, font/icon info under them -->
+    <div class="col col-buttons">
+
+    <!-- buttons -->
+    <section class="panel panel-buttons">
+      <div class="panel-head">
+        <h2>Buttons</h2>
+        <button class="copy-button" id="copy-shape-css">COPY CSS</button>
+      </div>
+      <div class="button-row">
+        <button class="demo-button demo-button-primary">Primary</button>
+        <button class="demo-button demo-button-secondary">Secondary</button>
+        <button class="demo-button demo-button-primary" disabled>Disabled</button>
+      </div>
+    </section>
+
+    <!-- quick facts about the font and icon set picked -->
+    <section class="panel panel-info">
+      <div class="info-row">
+        <span class="info-label">Font</span>
+        <span id="font-info"></span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">Icon set</span>
+        <span id="icon-info"></span>
+      </div>
+    </section>
+
+    </div>
+
+    </div>
 
     <!-- color palette -->
     <section class="panel panel-colors">
@@ -75,36 +109,6 @@
         <div class="color" data-role="error"><div class="swatch" style="background: var(--color-error)"></div><span class="color-name">error</span><code class="hex"></code></div>
         <div class="color" data-role="warning"><div class="swatch" style="background: var(--color-warning)"></div><span class="color-name">warning</span><code class="hex"></code></div>
         <div class="color" data-role="success"><div class="swatch" style="background: var(--color-success)"></div><span class="color-name">success</span><code class="hex"></code></div>
-      </div>
-    </section>
-
-    </div>
-
-    <!-- middle column: buttons on top, font/icon info filling the rest -->
-    <div class="col col-buttons">
-
-    <!-- buttons -->
-    <section class="panel panel-buttons">
-      <div class="panel-head">
-        <h2>Buttons</h2>
-        <button class="copy-button" id="copy-shape-css">COPY CSS</button>
-      </div>
-      <div class="button-row">
-        <button class="demo-button demo-button-primary">Primary</button>
-        <button class="demo-button demo-button-secondary">Secondary</button>
-        <button class="demo-button demo-button-primary" disabled>Disabled</button>
-      </div>
-    </section>
-
-    <!-- quick facts about the font and icon set picked -->
-    <section class="panel panel-info">
-      <div class="info-row">
-        <span class="info-label">Font</span>
-        <span id="font-info"></span>
-      </div>
-      <div class="info-row">
-        <span class="info-label">Icon set</span>
-        <span id="icon-info"></span>
       </div>
     </section>
 
