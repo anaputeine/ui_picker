@@ -182,7 +182,7 @@ body {
 }
 
 .col-left { flex: 3.6 1 0; }
-.panel-icons { flex: 1 1 0; min-width: 0; }
+.panel-icons { flex: 0.75 1 0; min-width: 0; }
 
 /* text and buttons side by side, text a bit narrower so the buttons fit on one line */
 .top-row {
