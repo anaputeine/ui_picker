@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="https://pyscript.net/releases/2026.7.3/core.css">
   <script type="module" src="https://pyscript.net/releases/2026.7.3/core.js"></script>
 
-  <link rel="stylesheet" href="./style.css?v=8">
+  <link rel="stylesheet" href="./style.css?v=9">
 </head>
 <body>
 
@@ -180,6 +180,11 @@
         <div class="phone-topbar"></div>
         <div class="phone-content">
           <p class="t-callout">Settings</p>
+          <div class="status-row">
+            <span class="status"><span class="dot dot-success"></span>Online</span>
+            <span class="status"><span class="dot dot-warning"></span>Away</span>
+            <span class="status"><span class="dot dot-error"></span>Busy</span>
+          </div>
           <div class="list-row"><iconify-icon icon="lucide:bell" data-concept="bell" aria-hidden="true"></iconify-icon><span class="t-body">Notifications</span></div>
           <div class="list-row"><iconify-icon icon="lucide:heart" data-concept="heart" aria-hidden="true"></iconify-icon><span class="t-body">Favorites</span></div>
           <div class="list-row"><iconify-icon icon="lucide:settings" data-concept="settings" aria-hidden="true"></iconify-icon><span class="t-body">Preferences</span></div>
@@ -203,6 +208,7 @@
           <div class="mini-card">
             <p class="t-callout">Pro</p>
             <p class="t-body">For teams</p>
+            <span class="badge"><iconify-icon icon="lucide:star" data-concept="star" aria-hidden="true"></iconify-icon>Popular</span>
           </div>
         </div>
       </div>
