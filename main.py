@@ -8,7 +8,6 @@ import presets
 import typography
 
 status = document.querySelector("#status")
-summary = document.querySelector("#summary")
 generate_button = document.querySelector("#generate")
 font_link = document.querySelector("#font-link")
 root = document.documentElement
@@ -65,15 +64,6 @@ def set_copy_buttons(type_result, palette, shape, icon_result):
     copy_icons_button.setAttribute("data-css", icons_text(icon_result))
 
 
-# makes one sentence about what was picked
-def describe(type_result, palette, shape, icon_result):
-    font_text = f"Font: {type_result['font']['name']}, scale {type_result['ratio']}, callout as {type_result['callout_type']}. "
-    color_text = f"Colors: {palette['mode']} mode, {palette['harmony']}, {palette['mood']}. "
-    shape_text = f"Shape: {shape['radius']} corners, {shape['shadow']} shadow, {shape['density']} spacing. "
-    icon_text = f"Icons: {icon_result['set']['name']}, {icon_result['style']}."
-    return font_text + color_text + shape_text + icon_text
-
-
 # makes a new design system and puts it on the page
 def generate():
     type_result = typography.generate_typography()
@@ -90,7 +80,6 @@ def generate():
     show_hex_codes(palette["colors"])
     show_icons(icon_result)
     set_copy_buttons(type_result, palette, shape, icon_result)
-    summary.textContent = describe(type_result, palette, shape, icon_result)
 
     font_info.textContent = f"{type_result['font']['name']}, scale {type_result['ratio']}, callout as {type_result['callout_type']}"
     icon_info.textContent = f"{icon_result['set']['name']}, {icon_result['style']}"
